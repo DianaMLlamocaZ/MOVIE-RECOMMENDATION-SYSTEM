@@ -7,6 +7,7 @@
 
 ## Descripción del proyecto:
 - El presente proyecto que desarrollé se basa en la creación de un sistema de recomendación de películas (por búsqueda y preferencias de usuario) End-to-End, utilizando el modelo multimodal CLIP de OpenAI, que permite convertir la descripción textual, que ingresa el usuario, a un 'embedding' (vector numérico de 512 dimensiones) en un espacio latente aprendido por el modelo, donde 'oraciones' con 'contexto' similar están más cerca, permitiendo así la recomendación textual.
+- La funcionalidad es posible, ya que el dataset de películas tiene descripciones textuales que son convertidas a *embeddings* y posteriormente insertadas a la base de datos, permitiendo el cálculo de distancias entre los *embeddings* de las descripciones originales de las películas del dataset, y los *embeddings textuales* que ingresa el usuario. 
 - Asimismo, el usuario tiene recomendaciones personalizadas en base a lo que añada en su historial de películas favoritas.
 - Para permitir la interacción del usuario con la interfaz, la recomendación textual y la recomendación personalizada en tiempo real, utilicé la base de datos PostgreSQL con la extensión 'pgvector', y Flask para conectar los endpoints y renderizar los HTML.
 - La extensión 'pgvector' genera un nuevo tipo de datos 'vector', que permite almacenar las descripciones de las películas y búsquedas textuales del usuario en formato *'embedding*' (vector). 
