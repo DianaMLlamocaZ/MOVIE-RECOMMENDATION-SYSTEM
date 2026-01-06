@@ -20,9 +20,9 @@ El sistema ofrece dos niveles de interacción:
 
 2. *Personalización basada en el perfil del usuario (**promedio vectorial**):*
 	- Para que la recomendación personalizada sea adecuada en base a las preferencias del usuario, se calcula un 'embedding promedio' de todas las películas presentes en la lista de 'favoritas' del usuario actual.
-			- Este 'embedding promedio' representa el 'resumen numérico' de las preferencias del usuario.
-			- La métrica utilizada para comparar el 'embedding promedio' respecto al catálogo en la base de datos es 'cosine distance'.
-			- Se ordenan las películas de menor a mayor distancia, mostrando solo las cinco coincidencias más cercanas respecto al 'embedding promedio'.
+	- Este 'embedding promedio' representa el 'resumen numérico' de las preferencias del usuario.
+	- La métrica utilizada para comparar el 'embedding promedio' respecto al catálogo en la base de datos es 'cosine distance'.
+	- Se ordenan las películas de menor a mayor distancia, mostrando solo las cinco coincidencias más cercanas respecto al 'embedding promedio'.
 
 ---
 
