@@ -15,10 +15,10 @@ La extensión 'pgvector' genera un nuevo tipo de datos 'vector', que permite alm
 
 ## ¿Cómo funciona la recomendación?
 El sistema ofrece dos niveles de interacción:
-- 1. *Búsqueda semántica:*
+1. *Búsqueda semántica:*
      - El usuario ingresa una descripción textual (descripción de la película) y el modelo CLIP la vectoriza para encontrar películas, almacenadas en la base de datos, cuyas descripciones estén más cerca en el espacio latente (espacio vectorial).
 
-- 2. *Personalización basada en el perfil del usuario (**promedio vectorial**):*
+2. *Personalización basada en el perfil del usuario (**promedio vectorial**):*
 	- Para que la recomendación personalizada sea adecuada en base a las preferencias del usuario, se calcula un 'embedding promedio' de todas las películas presentes en la lista de 'favoritas' del usuario actual.
 			- Este 'embedding promedio' representa el 'resumen numérico' de las preferencias del usuario.
 			- La métrica utilizada para comparar el 'embedding promedio' respecto al catálogo en la base de datos es 'cosine distance'.
