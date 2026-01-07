@@ -183,6 +183,6 @@ Para lanzar el sistema completo, asegúrate de tener **Docker** y **Docker Compo
 
 **2. Despliegue con Docker**
 - Abre una terminal en la carpeta del proyecto y ejecuta
-```console
+```bash
 docker compose up --build
 ```
