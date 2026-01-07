@@ -47,12 +47,12 @@ El sistema ofrece dos niveles de interacción:
 ---
 
 ## Herramientas utilizadas:
-- Dataset: Netflix Movies and TV Shows - Kaggle
-- Backend: Flask
-- AI: OpenAI CLIP (multimodal)
-- Base de datos: PostgreSQL + pgvector para el almacenamiento y consulta de '*embeddings*' (vectores)
-- Frontend: HTML + CSS
-- Docker Compose: Creación de imágenes y despliegue conjunto local
+- **Dataset:** Netflix Movies and TV Shows - Kaggle
+- **Backend:** Flask
+- **AI:** OpenAI CLIP (multimodal)
+- **Base de datos:** PostgreSQL + pgvector para el almacenamiento y consulta de '*embeddings*' (vectores)
+- **Frontend:** HTML + CSS
+- **Docker Compose:** Creación de imágenes y despliegue conjunto local
 
 ---
 
