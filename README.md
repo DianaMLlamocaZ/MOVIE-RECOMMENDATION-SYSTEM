@@ -167,5 +167,5 @@ host='db' 							#No cambiar. Debe coincidir con el servicio definido en docker-
 app_secret='TU_APP_SECRET'			#Necesario para la aplicación Flask
 ```
 
-**Host:** El host debe ser obligatoriamente db para coincidir con el nombre del servicio en el orquestador.
-**Puerto interno de la base de datos:** Se debe utilizar el **5432** por defecto. Este es el puerto interno que Docker utiliza para comunicar la API con la base de datos.
+- **Host:** El host debe ser obligatoriamente db para coincidir con el nombre del servicio en el orquestador.
+- **Puerto interno de la base de datos:** Se debe utilizar el **5432** por defecto. Este es el puerto interno que Docker utiliza para comunicar la API con la base de datos.
