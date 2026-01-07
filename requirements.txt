@@ -1,0 +1,8 @@
+Flask
+Werkzeug
+python-dotenv
+pathlib
+psycopg2-binary
+torch==2.6.0 --index-url https://download.pytorch.org/whl/cpu
+pandas
+transformers
