@@ -1,4 +1,7 @@
 # dIAnaMovieCLIP - Sistema de recomendación de películas
+¡Solo introduce una descripción, un resumen o simplemente de qué trata la película que tienes en mente y prepárate de disfrutar las mejores recomendaciones!
+- Gracias al modelo CLIP, puedes escribir conceptos abstractos y la IA encontrará la esencia de la película.
+- Cuantas más películas añadas a tus favoritos, el sistema personaliza sus recomendaciones.
 
 ### Índice
 * [Descripción del proyecto](#descripción-del-proyecto)
@@ -10,6 +13,10 @@
 * [Notas de configuración](#notas-de-configuración)
 * [Ejecución del proyecto](#ejecución-del-proyecto)
 * [Ejecuciones posteriores](#ejecuciones-posteriores)
+
+---
+## Visualización del proyecto
+
 ---
 
 ## Descripción del proyecto:
