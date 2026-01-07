@@ -3,6 +3,12 @@
 - Gracias al modelo CLIP, puedes escribir conceptos abstractos y la IA encontrará la esencia de la película.
 - Cuantas más películas añadas a tus favoritos, el sistema personaliza sus recomendaciones.
 
+---
+## Demostración del proyecto
+![DemostraciónDeLaAplicaciónGIF](./assets/GifDemostrativo.gif)
+
+---
+
 ### Índice
 * [Descripción del proyecto](#descripción-del-proyecto)
 * [Cómo funciona la recomendación](#cómo-funciona-la-recomendación)
@@ -13,10 +19,6 @@
 * [Notas de configuración](#notas-de-configuración)
 * [Ejecución del proyecto](#ejecución-del-proyecto)
 * [Ejecuciones posteriores](#ejecuciones-posteriores)
-
----
-## Demostración del proyecto
-![DemostraciónDeLaAplicaciónGIF](./assets/GifDemostrativo.gif)
 
 ---
 
