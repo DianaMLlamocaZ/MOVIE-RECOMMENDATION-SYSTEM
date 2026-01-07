@@ -127,6 +127,7 @@ El sistema ofrece dos niveles de interacción:
 ## Estructura de archivos del proyecto
 `
 ```text
+movie-recommendation-system/
 |-- docker-compose.yml		#Despliega la aplicación conjunta
 |-- Dockerfile				#Crea la imagen de Python personalizada: la aplicación
 |-- entrypoint.sh  			#Shell script para ejecutar los comandos e insertar los datos del dataset a la base de datos
