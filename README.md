@@ -148,6 +148,23 @@ movie-recommendation-system/
 |-- dataset_to_db.py		#Inserción del dataset a la base de datos
 |-- model.py				#Modelo CLIP y tokenizer
 |-- utils.py				#Convierte la descripción textual en embedding
-`
+```
 
-- Plantilla del formato .env:
+
+**Importante:**
+Al configurar tu archivo .env, asegúrate de mantener exactamente los mismos nombres de las variables que aparecen en el ejemplo de abajo, editando únicamente sus valores
+`
+```text
+user_nm='TU_USER_DE_POSTGRES'		#Nombre de usuario de tu base de datos
+puerto_db_ext=PUERTO_EXT_DB			#Puerto host externo del cliente de la base de datos (fuera del contenedor)
+puerto_db_int=5432					#Puerto interno de la base de datos. Se recomienda no modificar para asegurar la conexión dentro del contenedor
+puerto_app_ext=PUERTO_EXT_APP		#Puerto host externo del cliente de la aplicación (fuera del contenedor)
+puerto_app_int=PUERTO_INT_APP 		#Puerto interno de la aplicación (en el contenedor)
+password='TU_PASSWORD'				#Tu credencial para conectarte a la base de datos
+database='TU_DATABASE'				#Nombre de tu base de datos
+host='db' 							#No cambiar. Debe coincidir con el servicio definido en docker-compose.yml.
+app_secret='TU_APP_SECRET'			#Necesario para la aplicación Flask
+```
+
+**Host:** El host debe ser obligatoriamente db para coincidir con el nombre del servicio en el orquestador.
+**Puerto interno de la base de datos:** Se debe utilizar el **5432** por defecto. Este es el puerto interno que Docker utiliza para comunicar la API con la base de datos.
