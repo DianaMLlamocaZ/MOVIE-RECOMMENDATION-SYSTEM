@@ -19,6 +19,7 @@
 * [Notas de configuración](#notas-de-configuración)
 * [Ejecución del proyecto](#ejecución-del-proyecto)
 * [Ejecuciones posteriores](#ejecuciones-posteriores)
+* [Mejoras] (#mejoras)
 
 ---
 
@@ -217,3 +218,9 @@ Una vez que el proyecto ha sido construido y configurado por primera vez, no es 
 docker compose start
 ```
 --> Este comando levanta los servicios existentes (la aplicación y la base de datos) de forma instantánea, manteniendo la persistencia de datos y los embeddings generados anteriormente.
+
+---
+
+## Mejoras
+- El dataset utilizado fue Netflix Movies and TV Shows de Kaggle (en inglés). Por ese motivo, el motor de búsqueda funciona mejor con descripciones textuales en este idioma; sin embargo, considero añadir (en el futuro) datasets en español.
+- Introducir más películas a la base de datos para recomendaciones diversas.
