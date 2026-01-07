@@ -2,7 +2,9 @@
 
 ### Índice
 * [Descripción del proyecto](#descripción-del-proyecto)
-* [Cómo funciona la recomendación](#¿cómo-funciona-la-recomendación?)
+* [Cómo funciona la recomendación](#cómo-funciona-la-recomendación)
+* [Herramientas utilizadas](#herramientas-utilizadas)
+* [Scripts de Python](#scripts-de-python)
 ---
 
 ## Descripción del proyecto:
