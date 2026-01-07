@@ -7,6 +7,9 @@
 * [Scripts de Python](#scripts-de-python)
 * [Archivos](#archivos)
 * [Estructura de archivos del proyecto](#estructura-de-archivos-del-proyecto)
+* [Notas de configuración](#notas-de-configuración)
+* [Ejecución del proyecto](#ejecución-del-proyecto)
+* [Ejecuciones posteriores](#ejecuciones-posteriores)
 ---
 
 ## Descripción del proyecto:
