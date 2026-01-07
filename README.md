@@ -38,6 +38,10 @@ El sistema ofrece dos niveles de interacción:
 
 ---
 
+## Estructura de archivos
+
+---
+
 ## Scripts:
 - custom_dataset.py:
   	- Con el objetivo de evitar cargar el dataset en memoria, se lee el csv, película por película, para tener en memoria únicamente ese dato durante la inserción --> lazy load.
