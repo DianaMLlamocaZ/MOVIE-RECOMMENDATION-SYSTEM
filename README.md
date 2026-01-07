@@ -1,9 +1,8 @@
 # dIAnaMovieCLIP - Sistema de recomendación de películas
 
 ### Índice
-{anclas}
 * [Descripción del proyecto](#descripción-del-proyecto)
-
+* [Cómo funciona la recomendación](#¿cómo-funciona-la-recomendación?)
 ---
 
 ## Descripción del proyecto:
