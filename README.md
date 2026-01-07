@@ -169,4 +169,4 @@ app_secret='TU_APP_SECRET'			#Necesario para la aplicación Flask
 
 - **Host:** El host debe ser obligatoriamente db para coincidir con el nombre del servicio en el orquestador.
 - **Puerto interno de la base de datos:** Se debe utilizar el **5432** por defecto. Este es el puerto interno que Docker utiliza para comunicar la API con la base de datos.
-- ¡NO te OLVIDES de crear el archivo '.env' (mismo nombre) en el mismo nivel de archivos antes de ejecutar la aplicación.
+- ¡NO te OLVIDES de crear el archivo '.env' (igual nombre) en el mismo nivel de archivos antes de ejecutar la aplicación.
