@@ -190,4 +190,4 @@ docker compose up --build
 
 **3. Verificación de la API**
 - Una vez que veas en la consola que los servicios están listos, puedes probar el sistema:
-  - El servicio estará disponible en http://localhost:puerto_app_ext (usa el puerto externo de la aplicación que definiste en el archivo .env)
+  - El servicio estará disponible en `http://localhost:puerto_app_ext` (usa el puerto externo de la aplicación que definiste en el archivo .env)
