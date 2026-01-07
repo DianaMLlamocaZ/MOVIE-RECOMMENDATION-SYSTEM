@@ -149,3 +149,5 @@ movie-recommendation-system/
 |-- model.py				#Modelo CLIP y tokenizer
 |-- utils.py				#Convierte la descripción textual en embedding
 `
+
+- Plantilla del formato .env:
