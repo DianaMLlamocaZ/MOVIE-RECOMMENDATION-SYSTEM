@@ -191,3 +191,12 @@ docker compose up --build
 **3. Verificación de la API**
 - Una vez que veas en la consola que los servicios están listos, puedes probar el sistema:
   - El servicio estará disponible en `http://localhost:puerto_app_ext` (usa el puerto externo de la aplicación que definiste en el archivo .env)
+ 
+---
+
+## Ejecuciones posteriores
+Una vez que el proyecto ha sido construido y configurado por primera vez, no es necesario volver a compilar todo. Para usar la aplicación en el futuro, simplemente abre una terminal en la carpeta del proyecto y ejecuta
+```console
+docker compose start
+```
+--> Este comando levanta los servicios existentes (la aplicación y la base de datos) de forma instantánea, manteniendo la persistencia de datos y los embeddings generados anteriormente.
