@@ -15,7 +15,8 @@
 * [Ejecuciones posteriores](#ejecuciones-posteriores)
 
 ---
-## Visualización del proyecto
+## Demostración del proyecto
+![DemostraciónDeLaAplicaciónGIF](./assets/GifDemostrativo.gif)
 
 ---
 
