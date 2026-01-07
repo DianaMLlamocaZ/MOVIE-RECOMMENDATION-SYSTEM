@@ -105,4 +105,9 @@ El sistema ofrece dos niveles de interacción:
 
 ---
 
+## Archivos
+- init.sql: Contiene las consultas SQL que se ejecutan al crear de la base de datos.
+
+---
+
 ## Estructura de archivos
