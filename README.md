@@ -39,27 +39,27 @@ El sistema ofrece dos niveles de interacción:
 ---
 
 ## Scripts de Python:
-- custom_dataset.py:
+- [custom_dataset.py](./custom_dataset.py):
   	- Con el objetivo de evitar cargar el dataset en memoria, se lee el csv, película por película, para tener en memoria únicamente ese dato durante la inserción --> lazy load.
 
 
-- connect_database.py:
+- [connect_database.py](./connect_database.py):
 	- Se crea una clase 'DataBase' que contiene las configuraciones necesarias para conectarse a la base de datos local:
 		- El método .connection (luego de instanciar el objeto a la clase 'DataBase') es el encargado de realizar la conexión automáticamente y devuelve otra instancia con la conexión directa.
 		- **NOTA:** El archivo **.env** debes configurarlo con **variables propias**, necesario para crear y conectarse a la base de datos local.
 
 
-- model.py:
+- [model.py](./model.py):
 	- Este archivo usa la librería 'transformers' con el objetivo de descargar el modelo CLIP y el tokenizer. Este último es muy importante, ya que convierte el texto plano en un tensor de tokens que el modelo CLIP usará para convertir dicho tensor en un embedding (vector de 512 dimensiones) dentro del espacio latente de CLIP, dando como resultado un vector de contexto.
 		
 
-- dataset_to_db.py:
+- [dataset_to_db.py](./dataset_to_db.py):
 	- Primero verifica si hay datos insertados en la base de datos, para evitar la duplicados de películas cada vez que se ejecutan los contenedores.
 	- Inserta las películas (título, descripción y embedding) a la base de datos, añadiéndole un ID único (primary key) necesario para relacionar la tabla con otras y permitir la recomendación personalizada por usuario.
 	- **NOTA:** Este *script* se ejecuta al inicio, justo luego de crear las tablas en la base de datos, pues la tabla 'movies' debe contener la información de las películas del dataset, crucial para la recomendación personalizada.
 
 
-- apis.py:
+- [apis.py](./apis.py):
 	- Se conecta a la base de datos.
 	- Obtiene el modelo CLIP y el tokenizer.
 	- Crea una instancia de la clase 'Flask' y configura los *endpoints* para permitir que el flujo de acciones en el frontend (la interfaz), generado por el usuario, interactúe con el backend (base de datos local):
@@ -100,7 +100,7 @@ El sistema ofrece dos niveles de interacción:
 			- **NOTA:** El cambio es directo, la consulta DELETE se realiza en ese preciso instante, permitiendo un flujo de recomendación de películas personalizadas, en tiempo real, en base a lo que el usuario tiene en su lista de preferencias.
 
 
-- utils.py:
+- [utils.py](./utils.py):
 	- Este archivo contiene la función que permite convertir la descripción textual en embedding.
 
 ---
