@@ -2,6 +2,7 @@
 
 ### Índice
 {anclas}
+* [Descripción del proyecto](descripción-del-proyecto)
 
 ---
 
