@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador dIAnaMovieCLIP</title>
+    <style>
+        body { background-color: #141414; color: white; font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        
+        /*Navbar Estilo Netflix*/
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 4%;
+            background: rgba(0, 0, 0, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: #e50914; }
+
+        .search-container {
+            padding: 60px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #1f1f1f, #141414);
+        }
+        .search-box {
+            width: 100%;
+            max-width: 600px;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            border: 1px solid #444;
+            background: #2b2b2b;
+            color: white;
+            outline: none;
+            margin-bottom: 20px;
+        }
+        .search-box:focus { border-color: #e50914; }
+
+        .results-container { padding: 40px 20px; max-width: 1200px; margin: 0 auto; }
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .movie-card {
+            background: #1f1f1f;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            border: 1px solid #333;
+            text-align: center;
+        }
+        .movie-card:hover { transform: scale(1.05); border-color: #e50914; }
+        .movie-info { padding: 15px; }
+        .movie-info h3 { font-size: 1rem; margin: 0 0 10px 0; height: 40px; overflow: hidden; }
+        
+        /*Clase para el botón principal si no la tienes en CSS externo*/
+        .btn-principal {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn-principal:hover { background-color: #b20710; }
+        
+        /*Botón de logout*/
+        .btn-logout {
+            color: #ff4d4d;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 1px solid #ff4d4d;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        
+        /*Clase para el mensaje de alerta si el usuario intentar añadir una película que ya tiene agregada en su lista de favoritos*/
+        .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 4px;
+        text-align: center;
+        }
+        .alert-success { color: #155724; background-color: #d4edda; border-color: #c3e6cb; }
+        .alert-error { color: #856404; background-color: #fff3cd; border-color: #ffeeba; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div style="font-weight: bold; font-size: 1.5rem;">
+            <span style="color:#e50914">dIAna</span><span style="color:white">Movie</span><span style="color: #e50914;">CLIP</span>
+        </div>
+        <div class="nav-links">
+            <a href="{{ url_for('ver_favs') }}"> Ver favoritos</a>
+            <a href="{{ url_for('logout') }}" class="btn-logout">Cerrar sesión</a> 
+        </div>
+    </nav>
+
+    <div class="search-container">
+        <h1>dIAna<span>Movie</span><span>CLIP</span></h1>
+        <p>¿Qué película tienes en mente, {{ username }}? Describe una escena...</p>
+        
+        <form action="{{ url_for('buscar_clip') }}" method="GET">
+            <input type="text" name="query" class="search-box" required>
+            <br>
+            <button type="submit" class="btn-principal">Recomendar Películas</button>
+        </form>
+    </div>
+
+    <div id="flash-container" style="position: fixed; top: 20px; right: 20px; z-index: 1000; width: 300px;">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} flash-message">
+              {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    </div>
+
+    <div class="results-container">
+        {% if movies %}
+            <h2 style="margin-bottom: 30px;">Resultados para tu búsqueda:</h2>
+            <div class="movie-grid">
+                {% for movie in movies %}
+                <div class="movie-card">
+                    <div class="movie-info">
+                        <h3>{{ movie[1] }}</h3>
+                        <p>{{ movie[2] }}</p>
+
+                        <form action="{{ url_for('add_movie') }}" method="POST">
+                            <input type="hidden" name="id_movie" value="{{ movie[0] }}"> 
+                            <button type="submit" class="btn-principal" style="width:100%; font-size: 0.8rem;">
+                                Favorita
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div style="text-align: center; color: #666; margin-top: 50px;">
+                <h2 style="margin-bottom: 30px;">Resultados para tu búsqueda</h2>
+                <p>No hay resultados que mostrar. ¡Prueba describiendo algo!</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <div class="results-container">
+        {% if movies_favs %}
+            <h2 style="margin-bottom: 30px;">Películas recomendadas en base a tus favoritas:</h2>
+            <div class="movie-grid">
+                {% for movie in movies_favs %}
+                <div class="movie-card">
+                    <div class="movie-info">
+                        <h3>{{ movie[1] }}</h3>
+                        <p>{{ movie[2] }}</p>
+
+                        <form action="{{ url_for('add_movie') }}" method="POST">
+                            <input type="hidden" name="id_movie" value="{{ movie[0] }}"> 
+                            <button type="submit" class="btn-principal" style="width:100%; font-size: 0.8rem;">
+                                Favorita
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div style="text-align: center; color: #666; margin-top: 50px;">
+                <h2 style="margin-bottom: 30px;">Películas recomendadas en base a tus favoritas:</h2>
+                <p>No hay resultados que mostrar. ¡Prueba agregando a 'favoritos' algo!</p>
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+    //Función para eliminar el mensaje (que se envía desde Flask) indicando si el usuario puede o no agregar una película si está duplicada en favs
+    document.addEventListener('DOMContentLoaded', function() {
+        //Busco el mensaje con la clase 'flash-message'
+        const messages=document.querySelectorAll('.flash-message');
+        
+        messages.forEach(function(msg) {
+            //Espero 3 segundos antes de empezar a ocultar el mensaje
+            setTimeout(function() {
+                msg.style.transition="opacity 0.8s ease, transform 0.8s ease";
+                msg.style.opacity="0";
+                msg.style.transform="translateY(-20px)"; // Efecto de subir al desaparecer
+                
+                //Borro del mapa el elemento después de la animación
+                setTimeout(function() {
+                    msg.remove();
+                },800);
+            },3000);
+        });
+    });
+    </script>
+
+</body>
+</html>
