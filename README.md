@@ -108,14 +108,20 @@ El sistema ofrece dos niveles de interacción:
 ## Archivos
 - [init.sql](./init.sql):
   - Contiene las consultas SQL que se ejecutan al crear el contenedor de la base de datos.
+
 - [Dockerfile](./Dockerfile):
   - Contiene las instrucciones para crear la imagen personalizada de Python y ejecutar la aplicación en el contenedor.
+
 - [entrypoint.sh](./entrypoint.sh):
   - Archivo que contiene los comandos a ejecutar de 'manera secuencial' durante la creación de la imagen personalizada de Python.
   - La secuencialidad de ejecución de archivos es necesaria, ya que primero se necesita insertar los datos del dataset a la base de datos y, posteriormente, ejecutar la aplicación.
   - Este archivo es el que se ejecuta al crear o iniciar el contenedor de la aplicación. Por ese motivo, en el script **dataset_to_db.py** primero se verifica que no hayan datos insertados en la base de datos para evitar duplicaciones.
+
 - [docker-compose.yml](./docker-compose.yml):
   - Archivo .yml que despliega la aplicación conjunta.
+
+ - **Importante**: En el mismo nivel de estructura de archivos, DEBES crear un archivo .env (con ese mismo nombre). Es necesario para que se ejecute la aplicación de forma correcta.
+  
 ---
 
 ## Estructura de archivos
