@@ -170,3 +170,19 @@ app_secret='TU_APP_SECRET'			#Necesario para la aplicación Flask
 - **Host:** El host debe ser obligatoriamente db para coincidir con el nombre del servicio en el orquestador.
 - **Puerto interno de la base de datos:** Se debe utilizar el **5432** por defecto. Este es el puerto interno que Docker utiliza para comunicar la API con la base de datos.
 - ¡**NO** te **OLVIDES** de crear el archivo **'.env'** (igual nombre) en el mismo nivel de archivos antes de ejecutar la aplicación.
+
+----
+
+## Ejecución del proyecto
+Para lanzar el sistema completo, asegúrate de tener **Docker** y **Docker Compose** instalados.
+
+**1. Configuración del entorno**
+- Clona el repositorio
+- Crea un archivo llamado .env en el mismo nivel de archivos
+- Define tus credenciales en el archivo .env guiándote del ejemplo anterior: edita únicamente sus valores, asegurándote de mantener igual el 'host' y 'puerto_db_int'
+
+**2. Despliegue con Docker**
+- Abre una terminal en la carpeta del proyecto y ejecuta
+```console
+docker compose up --build
+```
