@@ -179,10 +179,15 @@ Para lanzar el sistema completo, asegúrate de tener **Docker** y **Docker Compo
 **1. Configuración del entorno**
 - Clona el repositorio
 - Crea un archivo llamado .env en el mismo nivel de archivos
-- Define tus credenciales en el archivo .env guiándote del ejemplo anterior: edita únicamente sus valores, asegurándote de mantener igual el 'host' y 'puerto_db_int'
+- Define tus credenciales en el archivo .env guiándote del ejemplo anterior: edita únicamente sus valores, asegurándote de mantener igual el *host* y *puerto_db_int*
 
 **2. Despliegue con Docker**
 - Abre una terminal en la carpeta del proyecto y ejecuta
 ```bash
 docker compose up --build
 ```
+- Este comando construye la imagen de Python, descarga la imagen de la base de datos, crea la red interna entre los contenedores, levanta los servicios y ejecuta el script **entrypoint.sh**
+
+**3. Verificación de la API**
+- Una vez que veas en la consola que los servicios están listos, puedes probar el sistema:
+  - El servicio estará disponible en http://localhost:puerto_app_ext (usa el puerto externo de la aplicación que definiste en el archivo .env)
