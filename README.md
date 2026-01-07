@@ -5,6 +5,8 @@
 * [Cómo funciona la recomendación](#cómo-funciona-la-recomendación)
 * [Herramientas utilizadas](#herramientas-utilizadas)
 * [Scripts de Python](#scripts-de-python)
+* [Archivos](#archivos)
+* [Estructura de archivos del proyecto](#estructura-de-archivos-del-proyecto)
 ---
 
 ## Descripción del proyecto:
