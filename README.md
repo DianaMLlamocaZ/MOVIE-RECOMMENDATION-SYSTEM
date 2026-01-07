@@ -106,7 +106,9 @@ El sistema ofrece dos niveles de interacción:
 ---
 
 ## Archivos
-- init.sql: Contiene las consultas SQL que se ejecutan al crear de la base de datos.
+- [init.sql](./init.sql): Contiene las consultas SQL que se ejecutan al crear de la base de datos.
+- [Dockerfile](./Dockerfile): Contiene las instrucciones para crear la imagen personalizada de Python y ejecutar la aplicación en el contenedor.
+
 
 ---
 
