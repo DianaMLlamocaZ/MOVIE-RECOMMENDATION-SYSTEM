@@ -136,10 +136,10 @@ El sistema ofrece dos niveles de interacción:
 |-- init.sql 				#Crea las tablas de la base de datos
 | 
 |-- data/
-|---- dataset.csv			#Dataset en formato .csv
+|      |--dataset.csv		#Dataset en formato .csv
 |
 |-- templates/
-|---- .htmls				#Archivos .html para al interfaz de la aplicación
+|	|-- .htmls				#Archivos .html para al interfaz de la aplicación
 |
 |-- apis.py					#Contiene los endpoints
 |-- connect_database.py 	#Conexión a la base de datos local
