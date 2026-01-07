@@ -183,7 +183,7 @@ Para lanzar el sistema completo, asegúrate de tener **Docker** y **Docker Compo
 
 **2. Despliegue con Docker**
 - Abre una terminal en la carpeta del proyecto y ejecuta
-```bash
+```console
 docker compose up --build
 ```
 - Este comando construye la imagen de Python, descarga la imagen de la base de datos, crea la red interna entre los contenedores, levanta los servicios y ejecuta el script **entrypoint.sh**
