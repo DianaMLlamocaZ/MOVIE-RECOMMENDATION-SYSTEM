@@ -2,7 +2,7 @@
 
 ### Índice
 {anclas}
-* [Descripción del proyecto](descripción-del-proyecto:)
+* [Descripción del proyecto](#descripción-del-proyecto:)
 
 ---
 
