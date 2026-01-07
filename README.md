@@ -152,7 +152,7 @@ movie-recommendation-system/
 
 ---
 
-**Importante: Notas de configuración**
+## Notas de configuración
 Al configurar tu archivo .env, asegúrate de mantener exactamente los mismos nombres de las variables que aparecen en el ejemplo de abajo, editando únicamente sus valores
 `
 ```text
