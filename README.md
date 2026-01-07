@@ -124,4 +124,27 @@ El sistema ofrece dos niveles de interacción:
   
 ---
 
-## Estructura de archivos
+## Estructura de archivos del proyecto
+`
+```text
+|-- docker-compose.yml		#Despliega la aplicación conjunta
+|-- Dockerfile				#Crea la imagen de Python personalizada: la aplicación
+|-- entrypoint.sh  			#Shell script para ejecutar los comandos e insertar los datos del dataset a la base de datos
+|
+|-- requirements.txt 		#Librerías necesarias
+|-- .env (credenciales)  	#Este archivo lo debes crear TÚ para que el sistema funcione localmente. Asegúrate de ubicarlo en el mismo nivel de archivos y con el nombre exacto '.env'
+|-- init.sql 				#Crea las tablas de la base de datos
+| 
+|-- data/
+|---- dataset.csv			#Dataset en formato .csv
+|
+|-- templates/
+|---- .htmls				#Archivos .html para al interfaz de la aplicación
+|
+|-- apis.py					#Contiene los endpoints
+|-- connect_database.py 	#Conexión a la base de datos local
+|-- custom_dataset.py		#Lazy load del dataset
+|-- dataset_to_db.py		#Inserción del dataset a la base de datos
+|-- model.py				#Modelo CLIP y tokenizer
+|-- utils.py				#Convierte la descripción textual en embedding
+`
