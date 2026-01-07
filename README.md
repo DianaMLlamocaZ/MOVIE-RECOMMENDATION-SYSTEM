@@ -153,8 +153,8 @@ movie-recommendation-system/
 ---
 
 ## Notas de configuración
-Al configurar tu archivo .env, asegúrate de mantener exactamente los mismos nombres de las variables que aparecen en el ejemplo de abajo, editando únicamente sus valores
-`
+Al configurar tu archivo .env, asegúrate de mantener exactamente los mismos nombres de las variables que aparecen en el ejemplo de abajo, editando únicamente sus valores.
+
 ```text
 user_nm='TU_USER_DE_POSTGRES'		#Nombre de usuario de tu base de datos
 puerto_db_ext=PUERTO_EXT_DB			#Puerto host externo del cliente de la base de datos (fuera del contenedor)
