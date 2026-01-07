@@ -19,7 +19,7 @@
 * [Notas de configuración](#notas-de-configuración)
 * [Ejecución del proyecto](#ejecución-del-proyecto)
 * [Ejecuciones posteriores](#ejecuciones-posteriores)
-* [Mejoras] (#mejoras)
+* [Mejoras](#mejoras)
 
 ---
 
