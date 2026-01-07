@@ -5,7 +5,7 @@
 
 ---
 ## Demostración del proyecto
-![DemostraciónDeLaAplicaciónGIF](./assets/Gif-Demostrativo.gif)
+![DemostraciónDeLaAplicaciónGIF](./assets/Gif-Demostracion.gif)
 
 ---
 
